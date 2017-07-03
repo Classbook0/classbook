@@ -1,7 +1,7 @@
 class CursosController < ApplicationController
   before_action :set_curso, only: [:show, :edit, :update, :destroy]
   before_action :set_lista, only: [:new, :edit]
-  load_and_authorize_resource
+  #load_and_authorize_resource
   # GET /cursos
   # GET /cursos.json
   def index
