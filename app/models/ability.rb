@@ -7,14 +7,14 @@ class Ability
     alias_action :create, :read, :update, :to => :cru
     alias_action :update, :read, :to => :ur
 
-    user ||= User.new
+    #user ||= User.new
     caso = user.perfil
-     case user.perfil?
-     when 0 #ADM SISTEMA
+     case user.perfil
+        when "Administrador" #ADM SISTEMA
            can :crud, :all
-         when 1
+         when "Profesor"
            can :ur, :all
-         when 2
+         when "Alumno"
            can :ur, :all
      end
   end

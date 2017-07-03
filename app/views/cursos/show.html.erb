@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Asignatura:</strong>
+  <%= @curso.nombre %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @curso.user.email %>
+</p>
+
+<p>
+  <strong>Perfil:</strong>
+  <%= @curso.user.perfil %>
+</p>
+
+<%= link_to 'Editar <span class="glyphicon glyphicon-edit"></span>'.html_safe, edit_curso_path(@curso),  :class => 'btn btn-warning' %>
+|
+<%= link_to 'Volver <span class="glyphicon glyphicon-circle-arrow-left"></span>'.html_safe, cursos_path,  :class => 'btn btn-warning' %>

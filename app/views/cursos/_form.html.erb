@@ -1,0 +1,34 @@
+<%= form_for(curso, url: {action: "create"}, html: {class: "form-horizontal"}) do |f| %>
+  <% if curso.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(curso.errors.count, "error") %> prohibited this curso from being saved:</h2>
+
+      <ul>
+      <% curso.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group" >
+    <label for="nombre" class="col-sm-2 control-label">Asignatura:</label>
+    <div class="col-sm-6">
+      <%= f.text_field :nombre, :type =>"text", :class=>"form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group" >
+    <label for="user_id" class="col-sm-2 control-label">Profesor:</label>
+    <div class="col-sm-6">
+      <%= f.select :user_id, @listado_usuarios, {include_blank: 'Seleccione un usuario...'}, :class=>"form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <%= button_tag 'Grabar <span class="glyphicon glyphicon-save"></span>'.html_safe,  :class => 'btn btn-success'%>
+    </div>
+  </div>
+
+<% end %>
