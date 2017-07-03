@@ -17,9 +17,12 @@ class Ability
          when "Profesor"
            can :ur, :all
            can :du, Curso
+           can :du, Note
          when "Alumno"
            can :ur, Curso
            cannot :du, Curso
+           can :ur, Note
+           cannot :du, Note
      end
   end
 end

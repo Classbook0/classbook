@@ -8,7 +8,11 @@ class NotesController < ApplicationController
   # GET /nota
   # GET /nota.json
   def index
-    @nota = Note.all
+    if current_user.perfil == 'Alumno'
+      @nota = Note.where(user_id: current_user.id)
+    else
+      @nota = Note.all
+    end
   end
 
   # GET /nota/1
