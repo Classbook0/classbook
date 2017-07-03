@@ -29,7 +29,7 @@ class NotesController < ApplicationController
   def create
     puts '.....................> ' + params["n1"].to_s
     @note = Note.new(n1: params[:n1], n2: params[:n2], n3: params[:n3], n4: params[:n4],
-      nf: params[:nf], curso_id: params[:curso_id], user_id: params[:user_id])
+      nf: params[:nf], curso_id: params[:curso_id], user_id: 3)
 
     respond_to do |format|
       if @note.save

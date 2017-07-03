@@ -27,13 +27,13 @@
 
 <p>
   <strong>Curso:</strong>
-  <%= @note.curso %>
+  <%= @note.curso.nombre %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @note.user %>
+  <strong>Usuario:</strong>
+  <%= @note.user.email %>
 </p>
 
-<%= link_to 'Edit', edit_note_path(@note) %> |
-<%= link_to 'Back', nota_path %>
+<%= link_to 'Editar', edit_curso_note_path(params[:curso_id],params[:id]) %> |
+<%= link_to 'Volver', curso_notes_path(params[:curso_id]) %>

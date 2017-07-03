@@ -27,8 +27,8 @@
         <td><%= note.n3 %></td>
         <td><%= note.n4 %></td>
         <td><%= note.nf %></td>
-        <td><%= note.curso %></td>
-        <td><%= note.user %></td>
+        <td><%= note.curso.nombre %></td>
+        <td><%= note.user.email %></td>
         <td><%= link_to 'Show', curso_note_path(params[:curso_id], note.id) %></td>
         <td><%= link_to 'Edit', edit_curso_note_path(params[:curso_id], note.id) %></td>
         <td><%= link_to 'Destroy', curso_note_path(params[:curso_id], note.id), method: :delete, data: { confirm: 'Estas seguro?' } %></td>
