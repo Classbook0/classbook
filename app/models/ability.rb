@@ -16,7 +16,7 @@ class Ability
            can :du, :all
          when "Profesor"
            can :ur, :all
-           can :du, Curso
+           can :du, :all
            can :du, Note
          when "Alumno"
            can :ur, Curso
