@@ -1,7 +1,8 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
   before_action :set_lista, only: [:new, :edit, :create, :update]
-  before_action :set_curso, only: [:new, :index]
+  before_action :set_curso, only: [:new, :index, :edit]
+  after_action :set_total, only: [:create, :update]
   #load_and_authorize_resource
 
   # GET /nota
@@ -78,6 +79,14 @@ class NotesController < ApplicationController
 
     def set_curso
       @curso = Curso.find(params[:curso_id])
+    end
+
+    def set_total
+      if @note
+        suma = (@note.n1 + @note.n2 + @note.n3 + @note.n4)
+        suma = suma / 4
+        @note.update(nf: suma.to_f)
+      end
     end
 
     def note_params
