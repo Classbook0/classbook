@@ -21,6 +21,12 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field" >
+    <%= f.label :perfil %><br />
+    <% perfiles = options_for_select(User.perfils.collect { |s| [s[0], s[0]] }) %>
+    <%= f.select :perfil, perfiles, {} %>
+  </div>
+<br>
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
