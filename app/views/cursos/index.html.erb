@@ -21,8 +21,12 @@
         <td><%= curso.user.email %></td>
         <td><%= curso.user.perfil %></td>
         <td><%= link_to 'Show', curso %></td>
+        <% if can? :du, curso %>
         <td><%= link_to 'Edit', edit_curso_path(curso) %></td>
         <td><%= link_to 'Destroy', curso, method: :delete, data: { confirm: 'Estas seguro de eliminar este curso?' } %></td>
+        <% else %>
+        <td></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

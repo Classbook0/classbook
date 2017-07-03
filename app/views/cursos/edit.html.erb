@@ -2,5 +2,6 @@
 
 <%= render 'form', curso: @curso %>
 
-<%= link_to 'Show', @curso %> |
-<%= link_to 'Back', cursos_path %>
+<%= link_to 'Ver <span class="glyphicon glyphicon-eye-open"></span>'.html_safe, @curso,  :class => 'btn btn-warning' %>
+|
+<%= link_to 'Volver <span class="glyphicon glyphicon-circle-arrow-left"></span>'.html_safe, cursos_path,  :class => 'btn btn-warning' %>
