@@ -75,7 +75,7 @@ class NotesController < ApplicationController
     end
 
     def set_lista
-      @listado_usuarios = User.where(perfil: "Alumno").collect{|c| [c.email.to_s + ' - [' + c.perfil.to_s + ']', c.id]}
+      @listado_usuarios_notas = User.where(perfil: "Alumno").collect{|c| [c.email.to_s + ' - [' + c.perfil.to_s + ']', c.id]}
       @listado_cursos = Curso.all.collect{|c| [c.nombre, c.id]}
     end
 
