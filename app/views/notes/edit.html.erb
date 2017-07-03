@@ -2,5 +2,5 @@
 
 <%= render 'form', note: @note %>
 
-<%= link_to 'Show', @note %> |
-<%= link_to 'Back', nota_path %>
+<%= link_to 'Ver', curso_note_path(params[:curso_id],params[:id]) %> |
+<%= link_to 'Volver', curso_notes_path(params[:curso_id]) %>
