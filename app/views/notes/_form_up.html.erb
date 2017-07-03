@@ -1,6 +1,7 @@
-<%= form_for(@note, url: {action: "create"}, html: {class: "form-horizontal"}) do |f| %>
+<%= form_for @note, url: {action: "update"}, method: :patch, html: {class: "form-horizontal"} do |f| %>
 
   <%= f.hidden_field :curso_id, :value => params[:curso_id]%>
+  <%= f.hidden_field :id, :value => @note.id%>
 
   <div class="form-group" >
     <label for="user_id" class="col-sm-2 control-label">Alumno:</label>
@@ -37,10 +38,16 @@
     </div>
   </div>
 
+  <div class="form-group" >
+    <label for="nf" class="col-sm-2 control-label">Nota Final:</label>
+    <div class="col-sm-6">
+      <%= f.number_field :nf, :type =>"number", :class=>"form-control", :step => :any%>
+    </div>
+  </div>
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-6">
-      <%= button_tag 'Grabar <span class="glyphicon glyphicon-save"></span>'.html_safe,  :class => 'btn btn-success'%>
+      <%= button_tag 'Actualizar <span class="glyphicon glyphicon-refresh"></span>'.html_safe,  :class => 'btn btn-success'%>
     </div>
   </div>
 <% end %>

@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :cursos do
     resources :notes
   end
+  post 'notes/crear/generar/', to: 'notes#generar'
 end

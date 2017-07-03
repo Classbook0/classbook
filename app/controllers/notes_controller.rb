@@ -27,9 +27,7 @@ class NotesController < ApplicationController
   # POST /nota
   # POST /nota.json
   def create
-    puts '.....................> ' + params["n1"].to_s
-    @note = Note.new(n1: params[:n1], n2: params[:n2], n3: params[:n3], n4: params[:n4],
-      nf: params[:nf], curso_id: params[:curso_id], user_id: 3)
+    @note = Note.new(note_params)
 
     respond_to do |format|
       if @note.save
@@ -46,10 +44,9 @@ class NotesController < ApplicationController
   # PATCH/PUT /nota/1.json
   def update
     respond_to do |format|
-      if @note.update(n1: params[:n1], n2: params[:n2], n3: params[:n3], n4: params[:n4],
-        nf: params[:nf], curso_id: params[:curso_id], user_id: params[:user_id])
+      if @note.update(note_params)
 
-        format.html { redirect_to @note, notice: 'Nota actualizada correctamente.' }
+        format.html { redirect_to curso_note_path(params[:curso_id],@note.id), notice: 'Nota actualizada correctamente.' }
         format.json { render :show, status: :ok, location: @note }
       else
         format.html { render :edit }

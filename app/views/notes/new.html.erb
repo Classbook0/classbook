@@ -1,5 +1,5 @@
 <h1>Agregar Nota</h1>
 <h2>Curso: <%= @curso ? @curso.nombre : ''%></h2>
-<%= render 'form', note: @note %>
+<%= render 'form' %>
 
 <%= link_to 'Volver <span class="glyphicon glyphicon-circle-arrow-left"></span>'.html_safe, curso_notes_path,  :class => 'btn btn-warning' %>
