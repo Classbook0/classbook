@@ -3,7 +3,9 @@
 <h1>Notas</h1>
 <h2>Curso: <%= @curso ? @curso.nombre : ''%></h2>
 <%= link_to 'Volver <span class="glyphicon glyphicon-circle-arrow-left"></span>'.html_safe, cursos_path,  :class => 'btn btn-warning' %>
+<% if can? :du, Note %>
 <%= link_to 'Nuevo <span class="glyphicon glyphicon-plus-sign"></span>'.html_safe, new_curso_note_path,  :class => 'btn btn-success' %>
+<% end %>
 <br><br>
 <div class = "center-table table-responsive">
 <table  class="table table-striped table-bordered table-center">
