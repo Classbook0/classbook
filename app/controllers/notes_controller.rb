@@ -83,8 +83,8 @@ class NotesController < ApplicationController
       @curso = Curso.find(params[:curso_id])
     end
 
-    #def note_params
-    #  params.require(:note).permit(:n1, :n2, :n3, :n4, :nf, :curso_id, :user_id)
-    #end
+    def note_params
+      params.require(:note).permit(:n1, :n2, :n3, :n4, :nf, :curso_id, :user_id)
+    end
 
 end
