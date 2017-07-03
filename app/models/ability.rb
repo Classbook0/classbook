@@ -7,7 +7,7 @@ class Ability
     alias_action :create, :read, :update, :to => :cru
     alias_action :update, :read, :to => :ur
 
-    #user ||= User.new
+    user ||= User.new
     caso = user.perfil
      case user.perfil
         when "Administrador" #ADM SISTEMA

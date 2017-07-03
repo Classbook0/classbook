@@ -39,7 +39,7 @@
 
         <% if user_signed_in?%>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="true"><%= current_user.email%> <span class="caret"></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="true"><%= current_user.perfil.to_s + ': ' + current_user.email.to_s%> <span class="caret"></span></a>
           <ul class="dropdown-menu">
 
             <li><a href="<%=edit_user_registration_path %>"><span class="glyphicon glyphicon-edit"></span> Editar Usuario</a></li>
