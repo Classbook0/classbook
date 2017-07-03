@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Cursos</h1>
-<% if can? :du, curso %>
+<% if can? :du, Curso %>
 <%= link_to 'Nuevo <span class="glyphicon glyphicon-plus-sign"></span>'.html_safe, new_curso_path,  :class => 'btn btn-success' %>
 <% end %>
 <br><br>
