@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Notas</h1>
+<%= link_to 'Volver <span class="glyphicon glyphicon-circle-arrow-left"></span>'.html_safe, cursos_path,  :class => 'btn btn-warning' %>
+<%= link_to 'Nuevo <span class="glyphicon glyphicon-plus-sign"></span>'.html_safe, new_curso_note_path,  :class => 'btn btn-success' %>
+<br><br>
+<div class = "center-table table-responsive">
+<table  class="table table-striped table-bordered table-center">
+  <thead>
+    <tr>
+      <th>N1</th>
+      <th>N2</th>
+      <th>N3</th>
+      <th>N4</th>
+      <th>Nf</th>
+      <th>Curso</th>
+      <th>Usuario</th>
+      <th colspan="3">Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nota.each do |note| %>
+      <tr>
+        <td><%= note.n1 %></td>
+        <td><%= note.n2 %></td>
+        <td><%= note.n3 %></td>
+        <td><%= note.n4 %></td>
+        <td><%= note.nf %></td>
+        <td><%= note.curso %></td>
+        <td><%= note.user %></td>
+        <td><%= link_to 'Show', curso_note_path(params[:curso_id], note.id) %></td>
+        <td><%= link_to 'Edit', edit_curso_note_path(params[:curso_id], note.id) %></td>
+        <td><%= link_to 'Destroy', curso_note_path(params[:curso_id], note.id), method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

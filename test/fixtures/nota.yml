@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  n1: 9.99
+  n2: 9.99
+  n3: 9.99
+  n4: 9.99
+  nf: 9.99
+  curso: one
+  user: one
+
+two:
+  n1: 9.99
+  n2: 9.99
+  n3: 9.99
+  n4: 9.99
+  nf: 9.99
+  curso: two
+  user: two

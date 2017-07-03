@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :cursos
   root 'inicio#index'
   resources :inicio, only: [:index]
   devise_for :users, controllers: {registrations: "users/registrations"}
@@ -9,4 +8,7 @@ Rails.application.routes.draw do
   resources :tallerculturales
   resources :tallerdeportivos
   resources :reunionapoderados
+  resources :cursos do
+    resources :notes
+  end
 end

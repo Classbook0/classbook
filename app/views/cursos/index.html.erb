@@ -10,7 +10,7 @@
       <th>Nombre</th>
       <th>Profesor</th>
       <th>Perfil</th>
-      <th colspan="3"></th>
+      <th colspan="4">Acciones</th>
     </tr>
   </thead>
 
@@ -20,6 +20,7 @@
         <td><%= curso.nombre %></td>
         <td><%= curso.user.email %></td>
         <td><%= curso.user.perfil %></td>
+        <td><%= link_to 'Notas', curso_notes_path(curso.id) %></td>
         <td><%= link_to 'Show', curso %></td>
         <% if can? :du, curso %>
         <td><%= link_to 'Edit', edit_curso_path(curso) %></td>

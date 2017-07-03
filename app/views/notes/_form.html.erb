@@ -1,0 +1,62 @@
+<%= form_for(new_curso_note_path(params[:curso_id]), url: {action: "create"}, html: {class: "form-horizontal"}) do |f| %>
+  <% if note.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(note.errors.count, "error") %> prohibited this note from being saved:</h2>
+
+      <ul>
+      <% note.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.hidden_field :curso_id, :value => params[:curso_id]%>
+
+  <div class="form-group" >
+    <label for="user_id" class="col-sm-2 control-label">Alumno:</label>
+    <div class="col-sm-6">
+      <%= f.select :user_id, @listado_usuarios, {include_blank: 'Seleccione un alumno...'}, :class=>"form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group" >
+    <label for="n1" class="col-sm-2 control-label">Nota 1:</label>
+    <div class="col-sm-6">
+      <%= f.number_field :n1, :type =>"number", :class=>"form-control", :step => :any%>
+    </div>
+  </div>
+
+  <div class="form-group" >
+    <label for="n2" class="col-sm-2 control-label">Nota 2:</label>
+    <div class="col-sm-6">
+      <%= f.number_field :n2, :type =>"number", :class=>"form-control", :step => :any%>
+    </div>
+  </div>
+
+  <div class="form-group" >
+    <label for="n3" class="col-sm-2 control-label">Nota 3:</label>
+    <div class="col-sm-6">
+      <%= f.number_field :n3, :type =>"number", :class=>"form-control", :step => :any%>
+    </div>
+  </div>
+
+  <div class="form-group" >
+    <label for="n4" class="col-sm-2 control-label">Nota 4:</label>
+    <div class="col-sm-6">
+      <%= f.number_field :n4, :type =>"number", :class=>"form-control", :step => :any%>
+    </div>
+  </div>
+
+  <div class="form-group" >
+    <label for="nf" class="col-sm-2 control-label">Nota Final:</label>
+    <div class="col-sm-6">
+      <%= f.number_field :nf, :type =>"number", :class=>"form-control", :step => :any%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <%= button_tag 'Grabar <span class="glyphicon glyphicon-save"></span>'.html_safe,  :class => 'btn btn-success'%>
+    </div>
+  </div>
+<% end %>
