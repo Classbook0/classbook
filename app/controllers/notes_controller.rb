@@ -2,7 +2,7 @@ class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
   before_action :set_lista, only: [:new, :edit, :create, :update]
   before_action :set_curso, only: [:new, :index]
-  load_and_authorize_resource
+  #load_and_authorize_resource
 
   # GET /nota
   # GET /nota.json
